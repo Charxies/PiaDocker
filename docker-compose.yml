@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+
+  web:
+    container_name: PIADOCKERIZADO1822426
+    build: .
+    working_dir: /code
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - '8085:8000'
+    expose:
+      - '8000'
+    links:
+      - mysql
+    networks:
+      backend:
+        ipv4_address: 192.19.199.5
+
+  mysql:
+    container_name: PIADOCKERIZADOMYsql1822426
+    image: 'mysql:5.7'
+    volumes:
+      - './database/data:/var/lib/mysql'
+    ports:
+      - '3308:3306'
+    networks:
+      backend:
+        ipv4_address: 192.19.199.6
+    environment:
+      MYSQL_DATABASE: projecto
+      MYSQL_ROOT_PASSWORD: admin
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.19.199.1/24

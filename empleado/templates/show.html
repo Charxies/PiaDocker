@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registros de Empleados</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+  <thead class="thead-dark">
+  <tr>
+    <th>Empleado ID</th>
+    <th>Empleado Nombre</th>
+    <th>Employee Email</th>
+    <th>Employee Contacto</th>
+    <th>Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for empleado in empleados %}
+  <tr>
+    <td>{{ empleado.eid }}</td>
+    <td>{{ empleado.ename }}</td>
+    <td>{{ empleado.eemail }}</td>
+    <td>{{ empleado.econtact }}</td>
+    <td>
+      <a href="/edit/{{ empleado.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+      <a href="/delete/{{ empleado.id }}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<br>
+<br>
+<center><a href="/emp" class="btn btn-primary">Add New Record</a></center>
+</body>
+</html>
