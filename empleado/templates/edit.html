@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Indice</title>
-  {% load staticfiles %}
-  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  <title>Adición de empleados</title>
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
 </head>
 <body>
 <form method="POST" class="post-form" action="/update/{{empleado.id}}">
@@ -18,33 +19,38 @@
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Empleado Id:</label>
+    <label class="col-sm-2 col-form-label">ID de Empleado:</label>
     <div class="col-sm-4">
       <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ empleado.eid }}"/>
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Empleado Name:</label>
+    <label class="col-sm-2 col-form-label">Nombre de Empleado:</label>
     <div class="col-sm-4">
       <input type="text" name="ename" id="id_ename" required maxlength="100" value="{{ empleado.ename }}" />
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Empleado Email:</label>
+    <label class="col-sm-2 col-form-label">Email de Empleado:</label>
     <div class="col-sm-4">
       <input type="email" name="eemail" id="id_eemail" required maxlength="254" value="{{ empleado.eemail }}" />
     </div>
   </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Empleado Contacto:</label>
+    <label class="col-sm-2 col-form-label">Puesto de Empleado:</label>
     <div class="col-sm-4">
-      <input type="text" name="econtact" id="id_econtact" required maxlength="15" value="{{ empleado.econtact }}" />
+      <input type="text" name="epos" id="id_epos" required maxlength="45" value="{{ empleado.epos }}" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Contacto de Empleado:</label>
+    <div class="col-sm-4">
+      <input type="number" name="econtact" id="id_econtact" value="{{ empleado.econtact }}" />
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-1 col-form-label"></label>
     <div class="col-sm-4">
-      <button type="submit" class="btn btn-success">Update</button>
+      <button type="submit" class="btn btn-success">Actualizar Empleado</button>
     </div>
   </div>
   </div>
