@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--)!@)!)k68vkzp2-o(*s5z)7--b^g0(!2tuyx2*6^=6*u82947
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,8 +80,8 @@ DATABASES ={
         'NAME': 'djangodb',
         'USER':'root',
         'PASSWORD':'admin',
-        'HOST': 'localhost',
-        'PORT': '3306'  
+        'HOST': 'PIAMYSQL',
+        'PORT': 3306
     }  
 }  
 
