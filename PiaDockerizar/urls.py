@@ -1,9 +1,9 @@
-from django.contrib import admin
-from django.urls import path
+from django.contrib import admin  
+from django.urls import path  
 from empleado import views
 urlpatterns = [  
     path('admin/', admin.site.urls),
-    path('',views.emp),
+    path('', views.show),
     path('emp', views.emp),
     path('show', views.show),  
     path('edit/<int:id>', views.edit),   

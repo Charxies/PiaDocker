@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Adición de empleados</title>
+  <title>Edicion de empleados</title>
 
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
@@ -15,7 +15,7 @@
   <div class="form-group row">
     <label class="col-sm-1 col-form-label"></label>
     <div class="col-sm-4">
-      <h3>Update Details</h3>
+      <h3>Editar Empleado</h3>
     </div>
   </div>
   <div class="form-group row">
@@ -36,15 +36,16 @@
       <input type="email" name="eemail" id="id_eemail" required maxlength="254" value="{{ empleado.eemail }}" />
     </div>
   </div>
-    <label class="col-sm-2 col-form-label">Puesto de Empleado:</label>
-    <div class="col-sm-4">
-      <input type="text" name="epos" id="id_epos" required maxlength="45" value="{{ empleado.epos }}" />
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Puesto Empleado:</label>
+      <div class="col-sm-4">
+        <input type="text" name="epos" id="id_epos" required maxlength="45" value="{{ empleado.epos }}" />
+      </div>
     </div>
-  </div>
   <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Contacto de Empleado:</label>
+    <label class="col-sm-2 col-form-label">Contacto Empleado:</label>
     <div class="col-sm-4">
-      <input type="number" name="econtact" id="id_econtact" value="{{ empleado.econtact }}" />
+      <input type="text" name="econtact" id="id_econtact" value="{{ empleado.econtact }}" />
     </div>
   </div>
   <div class="form-group row">
